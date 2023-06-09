@@ -1,0 +1,94 @@
+# Inserts a blank line between shell prompts
+add_newline = true
+
+# Change the default prompt format
+format =  """
+[┌─](238)$username $os $shell
+[├](238) $all\
+[└─](238)$character"""
+#"""\
+#[╭╴](238)$env_var\
+#$all[╰─](238)$character"""
+
+# Change the default prompt characters
+[character]
+success_symbol = "[\ue602](238)"
+error_symbol = "[\ue602](124)"
+
+# Modify how the OS shows
+[os]
+format = "[$symbol]($style)"
+style = "bold blue"
+disabled = false
+
+[os.symbols]
+Windows = "\ue62a"
+Ubuntu = "\uf31b"
+Macos = "\uf302"
+Pop = "\uf32a"
+
+# Show which shell is being used
+[shell]
+bash_indicator = "\uebca"
+powershell_indicator = "\ue683"
+cmd_indicator = "\uebc4"
+unknown_indicator = "\ueb32"
+style = 'bold blue'
+disabled = false
+
+# Shows the username
+[username]
+style_user = "green bold"
+style_root = "white bold"
+format = "[$user]($style)"
+disabled = false 
+show_always = true
+
+[directory]
+truncation_length = 3
+truncation_symbol = "…/"
+home_symbol = "\uf015 ~"
+read_only_style = "197"
+read_only = " \uf023 "
+format = "[$path]($style)[$read_only]($read_only_style) "
+
+[package]
+disabled = true
+
+[python]
+symbol = "\ue606 "
+python_binary = "python3"
+
+[julia]
+symbol = "\ue624"
+
+[nodejs]
+symbol = "\uf898"
+format = "via [$symbol $version](bold green) "
+disabled = false
+
+[git_branch]
+symbol = "\ue725 "
+format = "on [$symbol$branch]($style) "
+truncation_length = 31
+truncation_symbol = "…/"
+style = "bold purple"
+
+[git_status]
+format = '[\($all_status$ahead_behind\)]($style) '
+style = "bold purple"
+conflicted = "🏳 "
+up_to_date = "\uf274"
+untracked = "\uf421${count} "
+ahead = "⇡${count} "
+diverged = "⇕⇡${ahead_count}⇣${behind_count} "
+behind = "⇣${count} "
+stashed = "${count} "
+modified = "\uea73${count} "
+staged = "+${count} "
+renamed = "»${count} "
+deleted = "✘${count} "
+
+[docker_context]
+symbol = "\uf308"
+format = "via [$symbol $context](bold blue) "
