@@ -14,6 +14,17 @@ then add the following to `/.bashrc`
 ```bash
 eval "$(starship init bash)"
 ```
+### Configure
+> It is important to have a [Nerd Font](https://www.nerdfonts.com/) installed otherwise the glyphs will not be visible. I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) and [Source Code Pro](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro).
+
+Create the configuration file `starship.toml` in the `~/.config/` folder:
+```bash
+:~$ mkdir -p ~/.config && touch ~/.config/starship.toml #create the folder and then create the file inside that folder
+```
+
+More details about the configuration can be found in the [official documentation](https://starship.rs/config/#prompt). Note also that some color are written using an [ANSI number](https://i.stack.imgur.com/KTSQa.png)
+
+If you want to use mine, then just copy it into the `.config/` folder.
 
 ## Windows
 ### Install
@@ -65,7 +76,7 @@ eval "$(starship init bash)"
 If you do not have the file `/.bash_profile` or `~/.bash_login`, you will receive a warning saying you are missing those files and that one of them will be created for you.
 
 
-## Configure
+### Configure
 > It is important to have a [Nerd Font](https://www.nerdfonts.com/) installed otherwise the glyphs will not be visible. I use [Hack](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Hack) and [Source Code Pro](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/SourceCodePro).
 
 Create the configuration file `starship.toml` in the `~/.config/` folder:
