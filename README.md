@@ -2,12 +2,15 @@
 
 The following shows how I configured the Starship shell prompt for different OS.
 
+Here is how it looks before and after adding the `starship.toml` file on Ubuntu.
+![terminal_ubuntu](/img/terminal_ubuntu.png)
+
 ## Linux/WSL
 ### Install
 ```bash
 :~$ curl -sS https://starship.rs/install.sh | sh
 ```
-then add the following to `./bashrc`
+then add the following to `/.bashrc`
 ```bash
 eval "$(starship init bash)"
 ```
