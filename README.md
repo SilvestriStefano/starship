@@ -28,6 +28,8 @@ If you want to use mine, then just copy it into the `.config/` folder.
 
 ## Windows
 ### Install
+Check the current version of PowerShell with `$PSVersionTable`. The steps below were used for version 5.1 and 7.4.1
+
 ```powershell
  PS C:\Users\[username]> winget install --id Starship.Starship
 ```
@@ -58,8 +60,16 @@ MachinePolicy       Undefined
 
 add `Invoke-Expression (&starship init powershell)` to the PS profile
 ```powershell
+<!-- PowerShell 5.1 -->
 PS C:\Users\[username]> echo $PROFILE
 C:\Users\[username]\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1
+PS C:\Users\[username]> notepad $PROFILE
+```
+
+```powershell
+<!-- PowerShell 7.4.1 -->
+PS C:\Users\[username]> echo $PROFILE
+C:\Users\[username]\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
 PS C:\Users\[username]> notepad $PROFILE
 ```
 
@@ -88,6 +98,12 @@ or
 ```powershell
 PS C:\Users\[username]> New-Item -Path 'C:\Users\[username]\.config' -ItemType Directory
 PS C:\Users\[username]> New-Item -Path 'C:\Users\[username]\.config\starship.toml' -ItemType File
+```
+
+Do not forget to add the reference in the PS profile `C:\Users\...\Microsoft.PowerShell_profile.ps1`
+```
+$ENV:STARSHIP_CONFIG = "$HOME\.config\starship.toml"
+Invoke-Expression (&starship init powershell)
 ```
 
 More details about the configuration can be found in the [official documentation](https://starship.rs/config/#prompt). Note also that some color are written using an [ANSI number](https://i.stack.imgur.com/KTSQa.png)
